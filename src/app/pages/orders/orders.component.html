@@ -1,0 +1,26 @@
+<h1>Orders</h1>
+<hr>
+<h2>Orders List:</h2>
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>User</th>
+        <th>Amount</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of cart">
+        <td>{{ order.desc }}</td>
+        <td>{{ order.price }}$</td>
+        <td>{{ order.user }}</td>
+        <td>{{ order.amount }}</td>
+        <td>
+        <!-- <button (click)="updateorder(order, nameInput, priceInput)">Edit</button> -->
+        <button (click)="deleteOrder(order.id)">Delete</button> 
+        </td>
+      </tr>
+    </tbody>
+  </table>

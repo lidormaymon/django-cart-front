@@ -1,0 +1,11 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Adjust the desired space between the links */
+}
+
+.nav-text {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

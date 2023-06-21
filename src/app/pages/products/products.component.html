@@ -1,0 +1,43 @@
+<h2>Products</h2>
+
+<!-- Display a form for creating a new product -->
+<div>
+    <h3>Create Product</h3>
+    <div>
+      <label >Name:</label>
+      <input #nameInput>
+    </div>
+    <div>
+      <label>Price:</label>
+      <input #priceInput >
+    </div>
+    <button (click)="add(nameInput.value, +priceInput.value)">Create</button>
+  </div>
+
+<!-- Display a table with existing products -->
+<div>
+  <h3>Product List</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.desc }}</td>
+        <td>{{ product.price }}$</td>
+        <td>
+          <!-- <button (click)="updateProduct(product, nameInput, priceInput)">Edit</button> -->
+          <button (click)="addToCart(product.price,product.desc,+product.id)">add to cart</button>
+        <button (click)="deleteProd(product.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button (click)="buy()">checkout</button>
+
+
